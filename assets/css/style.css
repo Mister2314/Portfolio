@@ -49,14 +49,8 @@ header{
     width: 85%;
     height: 100%;
 }
-.headerbox2 ul li{
-    list-style-type: none;
+.About a, .Works a, .Contact a{
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color:#676767;
-}
-.headerbox2 ul li a{
     font-size: 16px;
     font-weight: 500;
     color:#676767;
@@ -64,9 +58,22 @@ header{
     cursor: pointer;
     transition: color .3s ease;
 }
+.headerbox2 ul li{
+    list-style-type: none;
+}
+
 .headerbox2 ul li a:hover{
     color: white;
 
+}
+.Home a{
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color:#fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color .3s ease;
 }
 .headerbox3{
     display: flex;
@@ -437,11 +444,7 @@ border: 1px solid rgb(41, 41, 41);
     height: 100%;
     text-decoration: none;
 }
-.s2-box3-a3{
-    width: 23%;
-    height: 100%;
-    text-decoration: none;
-}
+
 .s2-box1{
     position: relative;
     overflow: hidden;
@@ -615,7 +618,7 @@ border: 1px solid rgb(41, 41, 41);
     align-items: center;
     flex-direction: column;
     border-radius: 20px;
-    width: 100%;
+    width: 23%;
     height: 100%;
     background-color: #0F0F0F;
     border-top: 1px solid rgb(41, 41, 41);
@@ -671,7 +674,13 @@ border: 1px solid rgb(41, 41, 41);
     height: 10vh;
     background-color:transparent;
 }
-.s2-box3-icons::before{
+.s2-box3-a3{
+    position: relative;
+    width: 38%;
+    height: 65%;
+    text-decoration: none;
+}
+.s2-box3-a3::before{
     content: '';
     position: absolute;
     left: 0;
@@ -699,8 +708,8 @@ bottom: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 38%;
-    height: 65%;
+    width: 100%;
+    height: 100%;
     background-color: #0F0F0F;
     border-top: 1px solid rgb(41, 41, 41);
     border-left: 2px solid rgb(41, 41, 41);
@@ -712,11 +721,11 @@ bottom: 30px;
 .s2-box3-icons svg{
     color: white;
 }
-.s2-box3-icons:hover{
+.s2-box3-a3:hover .s2-box3-icons {
     background-color: white;
 
 }
-.s2-box3-icons:hover svg{
+.s2-box3-a3:hover svg{
     color: black;
 }
 .s2-box3-bottom h4{
