@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/contact.css">
+</head>
+<body>
+    <header >
+        <div class="header-container">
+        <div data-aos="zoom-out" class="headerbox1">
+           <h4>Morfyus</h4>
+        </div>
+        <div data-aos="zoom-out" class="headerbox2">
+            <ul>
+                <li class="Home"><a href="./index.html">Home</a></li>
+                <li class="About"><a href="./aboutme.html">About</a></li>
+                <li class="Works"><a href="">Works</a></li>
+                <li class="Contact"><a href="./contact.html">Contact</a></li>
+
+            </ul>
+        </div>
+        <div data-aos="zoom-out" class="headerbox3">
+            <a href="https://wa.me/994507032186">Let's talk</a>
+        </div>
+    </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-box1-left">
+                <h3>Contact Info</h3>
+                <div class="hero-box1-left-boxes">
+                    <div class="boxes">
+                        <div class="boxes-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="m7 9l5 3.5L17 9"/><path d="M2 17V7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Z"/></g></svg>
+                    </div>
+                    <div class="boxes-right">
+                        <span>Mail Me</span>
+                        <h4>xeyalhuseynli06@gmail.com</h4>
+                        <h4>huseynlixeyal82@gmail.com</h4>
+                    </div>
+                    </div>
+                    <div class="boxes">
+                        <div class="boxes-left">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4" d="M16.996 7.686a2 2 0 0 1 1.749 1.03l2.446 4.406a2 2 0 0 1 .04 1.865l-2.356 4.714s.683 3.511 3.541 6.37c2.859 2.858 6.358 3.53 6.358 3.53l4.713-2.357a2 2 0 0 1 1.866.04l4.42 2.458A2 2 0 0 1 40.8 31.49v5.073c0 2.584-2.4 4.45-4.848 3.624c-5.028-1.697-12.833-4.927-17.78-9.874c-4.946-4.947-8.177-12.751-9.873-17.78c-.826-2.447 1.04-4.847 3.624-4.847h5.072Z"/></svg>
+                        </div>
+                        <div class="boxes-right">
+                            <span>Contact Me</span>
+                            <h4>+994 50 703 21 86</h4>
+                            <h4>+994 50 703 21 86</h4>
+                        </div>
+                    </div>
+                    <div class="boxes">
+                        <div class="boxes-left">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path fill="currentColor" d="M12 12q.825 0 1.413-.588T14 10q0-.825-.588-1.413T12 8q-.825 0-1.413.588T10 10q0 .825.588 1.413T12 12Zm0 7.35q3.05-2.8 4.525-5.088T18 10.2q0-2.725-1.738-4.462T12 4Q9.475 4 7.737 5.738T6 10.2q0 1.775 1.475 4.063T12 19.35ZM12 22q-4.025-3.425-6.012-6.362T4 10.2q0-3.75 2.413-5.975T12 2q3.175 0 5.588 2.225T20 10.2q0 2.5-1.988 5.438T12 22Zm0-12Z"/></svg>
+                        </div>
+                        <div class="boxes-right">
+                            <span>Location</span>
+                            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-box1-right">
+                <h1>Let’s work <span>together.</span>
+                </h1>
+                <div class="form-container">
+                    <input type="text" placeholder="Name *" required id="name_id">
+                    <input type="email" placeholder="Email *" required id="email_id">
+                    <input type="text" required placeholder="Your Subject *" id="subject">
+                    
+                    <textarea name="message" required id="message" cols="30" rows="10" placeholder="Your Message *" ></textarea>
+                    <button onclick="SendMail()">Send Message</button>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+<script src="./assets/js/index.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript"> 
+  (function(){
+    emailjs.init("jiBeXM6uAI-ZEhXCi");
+  })();
+</script>
+</body>
+</html>
