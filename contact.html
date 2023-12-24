@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Morfyus</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/contact.css">
 </head>
 <body>
     <header >
-        <div class="header-container">
+        <div data-aos="zoom-out" class="header-container">
         <div data-aos="zoom-out" class="headerbox1">
            <h4>Morfyus</h4>
         </div>
@@ -16,7 +17,7 @@
             <ul>
                 <li class="Home"><a href="./index.html">Home</a></li>
                 <li class="About"><a href="./aboutme.html">About</a></li>
-                <li class="Works"><a href="">Works</a></li>
+                <li class="Works"><a href="./work.html">Works</a></li>
                 <li class="Contact"><a href="./contact.html">Contact</a></li>
 
             </ul>
@@ -29,7 +30,7 @@
 
     <section class="hero">
         <div class="hero-container">
-            <div class="hero-box1-left">
+            <div data-aos="fade-up" class="hero-box1-left">
                 <h3>Contact Info</h3>
                 <div class="hero-box1-left-boxes">
                     <div class="boxes">
@@ -64,7 +65,7 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-box1-right">
+            <div data-aos="fade-up" class="hero-box1-right">
                 <h1>Let’s work <span>together.</span>
                 </h1>
                 <div class="form-container">
@@ -86,5 +87,9 @@
     emailjs.init("jiBeXM6uAI-ZEhXCi");
   })();
 </script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
 </body>
 </html>

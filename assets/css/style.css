@@ -134,6 +134,7 @@ header{
     height: 98%;
 }
 .s1-box1{
+    margin-top: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -435,6 +436,7 @@ border: 1px solid rgb(41, 41, 41);
     color: white;
 }
 .s2-boxes-container{
+    margin-left: 10px;
     display: flex;
     justify-content: space-evenly;
     margin-top: 10px;
@@ -448,7 +450,7 @@ border: 1px solid rgb(41, 41, 41);
     text-decoration: none;
 }
 .s2-box2-a2{
-    width: 45%;
+    width: 46%;
     height: 100%;
     text-decoration: none;
 }
@@ -620,6 +622,7 @@ border: 1px solid rgb(41, 41, 41);
 .s2-box3{
     position: relative;
     padding-top: 10px;
+    margin-right: 15px;
     overflow: hidden;
     display: flex;
     justify-content: space-around;

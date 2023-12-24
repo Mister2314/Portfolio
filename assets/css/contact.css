@@ -136,7 +136,6 @@ header{
     text-transform:uppercase ;
 }
 .hero-box1-left-boxes{
-    /* padding-top: 25px; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
