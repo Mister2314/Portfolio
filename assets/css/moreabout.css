@@ -118,6 +118,7 @@ header{
     background-color: transparent;
 }
 .box{
+   box-shadow: rgba(236, 229, 229, 0.07) 0px 1px 2px, rgba(205, 202, 202, 0.07) 0px 2px 4px, #d1d1d112 0px 4px 8px, rgba(173, 172, 172, 0.07) 0px 8px 16px, rgba(154, 154, 154, 0.07) 0px 16px 32px, rgba(144, 144, 144, 0.07) 0px 32px 64px;
     position: sticky;
     top: 5%;
     padding-top: 25px;
