@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar{
+    width: 6px;
+    background-color: black;
+}
+::-webkit-scrollbar-thumb{
+    background-color: white;
+}
 
 header{
     display: flex;
@@ -13,7 +20,7 @@ header{
     background-color: #0F0F0F;
 }
 .header-container{
-    /* padding-right: px; */
+    padding-right: px;
     display: flex;
     justify-content: space-between;
     width: 77%;
@@ -49,17 +56,8 @@ header{
     width: 85%;
     height: 100%;
 }
-.headerbox2 ul li{
-    list-style-type: none;
+.About a, .Works a, .Contact a, .Home a{
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color:#676767;
-}
-.Works{
-    color: white;
-}
-.Home a, .Contact a, .About a{
     font-size: 16px;
     font-weight: 500;
     color:#676767;
@@ -67,11 +65,11 @@ header{
     cursor: pointer;
     transition: color .3s ease;
 }
-.Works a{
-    text-decoration: none;
-    color: white;
+.headerbox2 ul li{
+    list-style-type: none;
 }
-.Home a:hover,.Contact a:hover, .About a:hover{
+
+.headerbox2 ul li a:hover{
     color: white;
 
 }
@@ -98,4 +96,262 @@ header{
 .headerbox3 a:hover{
     background-color: white;
     color: black;
+}
+.hero{
+    display: flex;
+    width: 100%;
+    height: 200vh;
+    background-color: #0F0F0F;
+}
+.left-page{
+    display: flex;
+    justify-content: right;
+    width: 40%;
+    height: 100%;
+    background-color: transparent;
+}
+
+.box-container{
+    padding-top: 50px;
+    width: 70%;
+    height: 100%;
+    background-color: transparent;
+}
+.box{
+    position: sticky;
+    top: 5%;
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    border-radius: 30px;
+    width: 90%;
+    height: 45%;
+    background-color: #0F0F0F;
+    border-top: 1px solid rgb(41, 41, 41);
+    border-left: 2px solid rgb(41, 41, 41);
+    border-bottom: 1px solid rgb(41, 41, 41);
+    border-right: 1px solid rgb(41, 41, 41);
+}
+/* .box ::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(120deg, rgba(255,255,255,0.3), rgba(255,255,255,0.05));
+    border-radius: 30px;
+    opacity: 0.25;
+} */
+.box-top{
+    border-radius: 30px;
+    width: 85%;
+    height: 55%;
+    background-color: transparent;
+    overflow: hidden;
+}
+.box-top img{
+    width: 100%;
+    height: 100%;
+}
+.box-medium{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   width: 60%;
+   height: 20%;
+   background-color: transparent; 
+}
+.box-medium h3{
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: white;
+    font-size: 26px;
+letter-spacing: 0.3px;
+}
+.box-medium p{
+    cursor: help;
+    margin-top: 10px;
+    font-family: 'Inter', sans-serif;
+    color: #BCBCBC;
+}
+.box-medium-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 11%;
+    background-color: transparent;
+}
+.instagram, .github{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-right: 10px;
+    width: 18.5%;
+    height: 75%;
+    background-color: #0F0F0F;
+    border-top: 1px solid rgb(41, 41, 41);
+    border-left: 2px solid rgb(41, 41, 41);
+    border-bottom: 1px solid rgb(41, 41, 41);
+    border-right: 1px solid rgb(41, 41, 41);
+    border-radius: 100%;
+    transition: all .4s ease;
+}
+
+
+
+.box-bottom{
+    text-decoration: none;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    width: 85%;
+    height: 7.5%;
+    border-radius: 15px;
+    background-color: #0F0F0F;
+    border-top: 1px solid rgb(41, 41, 41);
+    border-left: 2px solid rgb(41, 41, 41);
+    border-bottom: 1px solid rgb(41, 41, 41);
+    border-right: 1px solid rgb(41, 41, 41);
+    transition: all .3s ease;
+}
+.box-bottom:hover,  .instagram:hover,.github:hover{
+background-color: white;
+color: black;
+}
+.box-bottom:hover p{
+    color: black;
+}
+
+.box-bottom p{
+color: white;
+font-family: 'Inter', sans-serif;
+}
+
+
+
+.right-page{
+    padding-left: 20px;
+    padding-top: 50px;
+    width: 60%;
+    height: 100%;
+    background-color: transparent;
+}
+
+.right-first{
+    padding-top: 15px;
+    width: 75%;
+    height: 30%;
+    background-color: transparent;
+}
+.right-first h2{
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+}
+.right-first p{
+    padding-top: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    opacity: 0.8;
+    line-height: 1.56;
+    color: white;
+}
+.right-second{
+    width: 76%;
+    height: 35%;
+    background-color: transparent;
+}
+.right-second h2{
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+}
+.right-second h5{
+    font-family: 'Inter', sans-serif;
+    margin-top: 15px;
+    color: #BCBCBC;
+    opacity: 0.6;
+    font-size: 16px;
+    font-weight: 500;
+}
+.right-second h4{
+    font-weight: 500;
+    margin-top: 5px;
+    color: #5b78f6;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+}
+.right-second p{
+    margin-top: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+    opacity: 0.8;
+    line-height: 1.56;
+}
+.right-end{
+    display: flex;
+    width: 70%;
+    height: 25%;
+    background-color: transparent;
+}
+.right-end-left{
+width: 50%;
+height: 100%;
+background-color:transparent;
+}
+.right-end-left h2, .right-end-right h2{
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.right-end-left span, .right-end-right span{
+    font-family: 'Inter', sans-serif;
+    color: #BCBCBC;
+    opacity: 0.6;
+    display: block;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.right-end-left h4, .right-end-right h4{
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    color: #FFFFFF;
+    opacity: 0.9;
+    font-size: 18px;
+    margin-bottom: 4px
+}
+.right-end-left p, .right-end-right p{
+    font-family: 'Inter', sans-serif;
+    color: #BCBCBC;
+    opacity: 0.6;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+
+.right-end-right{
+width: 50%;
+height: 100%;
+background-color: transparent;
+}
+
+.right-end-right h2{
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
