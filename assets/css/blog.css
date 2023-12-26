@@ -58,7 +58,7 @@ header{
     width: 85%;
     height: 100%;
 }
-.About a, .Works a, .Contact a{
+.About a, .Works a, .Contact a, .Home a{
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-weight: 500;
@@ -74,15 +74,6 @@ header{
 .headerbox2 ul li a:hover{
     color: white;
 
-}
-.Home a{
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color:#fff;
-    text-decoration: none;
-    cursor: pointer;
-    transition: color .3s ease;
 }
 .headerbox3{
     display: flex;
