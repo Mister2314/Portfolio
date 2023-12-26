@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+::-webkit-scrollbar{
+    width: 6px;
+    background-color: black;
+}
+::-webkit-scrollbar-thumb{
+    background-color: white;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 12vh;
+    background-color: #0F0F0F;
+}
+.header-container{
+    padding-right: px;
+    display: flex;
+    justify-content: space-between;
+    width: 77%;
+    height: 100%;
+    background-color: #0F0F0F;
+}
+.headerbox1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    height: 100%;
+    background-color: #0F0F0F;
+}
+.headerbox1 h4{
+    cursor: help;
+   font-size: 25px;
+   color:white;
+   font-family: 'Inter', sans-serif;
+   font-weight: 500;
+}
+.headerbox2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    height: 100%;
+    background-color: #0F0F0F;
+}
+.headerbox2 ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    height: 100%;
+}
+.About a, .Works a, .Contact a{
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color:#676767;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color .3s ease;
+}
+.headerbox2 ul li{
+    list-style-type: none;
+}
+
+.headerbox2 ul li a:hover{
+    color: white;
+
+}
+.Home a{
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color:#fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color .3s ease;
+}
+.headerbox3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    height: 100%;
+    background-color: #0F0F0F;
+}
+
+.headerbox3 a{
+    font-family: 'Inter', sans-serif;
+    background-color: #323232;
+    color: #fff;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 30px;
+    text-decoration: none;
+    transition: all .5s ease;
+}
+.headerbox3 a:hover{
+    background-color: white;
+    color: black;
+}
+
+.hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 87vh;
+    background-color: #0F0F0F;
+    overflow: hidden;
+}
+
+.typewrite{
+    color: white;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}

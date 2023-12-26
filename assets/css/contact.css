@@ -29,6 +29,7 @@ header{
     background-color: #0F0F0F;
 }
 .headerbox1{
+    cursor: help;
     display: flex;
     align-items: center;
     justify-content: center;

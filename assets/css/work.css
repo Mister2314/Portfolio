@@ -29,6 +29,7 @@ header{
     background-color: #0F0F0F;
 }
 .headerbox1 h4{
+    cursor: help;
    font-size: 25px;
    color:white;
    font-family: 'Inter', sans-serif;
