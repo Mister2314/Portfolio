@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="./assets/css/work.css">
 </head>
 <body>
+    <div class="loadpage" id="loadingScreen">
+        <div class="animate">Loading...</div>
+    </div>
+
     <header >
         <div data-aos="zoom-out" class="header-container">
         <div data-aos="zoom-out" class="headerbox1">
@@ -127,7 +131,7 @@
                       
                         
                     </a>
-                    <a class="hero-left-second" href="https://mister2314.github.io/Hsr-template/">
+                    <a class="hero-left-second" href="https://mister2314.github.io/Hsr-template/" target="_blank">
                         <div data-aos="fade-up" class="hero-left-top2">
                             <div class="hero-left-middle2">
                                 <img src="./assets/img/Hsr.jpg"  alt="">
@@ -178,6 +182,51 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init();
+  </script>
+  <script>
+  // Kaydırmayı devre dışı bırakmak için fonksiyon
+function disableScroll() {
+    window.addEventListener('scroll', preventDefault, { passive: false });
+    window.addEventListener('wheel', preventDefault, { passive: false });
+    window.addEventListener('touchmove', preventDefault, { passive: false });
+    window.addEventListener('keydown', preventDefaultForScrollKeys, { passive: false });
+}
+
+// Kaydırmayı etkinleştirmek için fonksiyon
+function enableScroll() {
+    window.removeEventListener('scroll', preventDefault, { passive: false });
+    window.removeEventListener('wheel', preventDefault, { passive: false });
+    window.removeEventListener('touchmove', preventDefault, { passive: false });
+    window.removeEventListener('keydown', preventDefaultForScrollKeys, { passive: false });
+}
+
+function preventDefault(e) {
+    e.preventDefault();
+}
+
+function preventDefaultForScrollKeys(e) {
+    // Kaydırma için kullanılan tuşlar
+    if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+    }
+}
+
+var keys = {
+    37: 1, 38: 1, 39: 1, 40: 1
+};
+
+window.addEventListener('load', function() {
+    // Kaydırmayı devre dışı bırak
+    disableScroll();
+
+    setTimeout(function() {
+        // Yükleme ekranını gizle
+        document.getElementById('loadingScreen').classList.add('hidden');
+        // Kaydırmayı etkinleştir
+        enableScroll();
+    }, 1500); // 3 saniye bekle
+});
   </script>
 </body>
 </html>

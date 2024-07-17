@@ -54,3 +54,47 @@ window.onload = function() {
     css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
     document.body.appendChild(css);
 };
+
+
+function disableScroll() {
+    window.addEventListener('scroll', preventDefault, { passive: false });
+    window.addEventListener('wheel', preventDefault, { passive: false });
+    window.addEventListener('touchmove', preventDefault, { passive: false });
+    window.addEventListener('keydown', preventDefaultForScrollKeys, { passive: false });
+}
+
+// Kaydırmayı etkinleştirmek için fonksiyon
+function enableScroll() {
+    window.removeEventListener('scroll', preventDefault, { passive: false });
+    window.removeEventListener('wheel', preventDefault, { passive: false });
+    window.removeEventListener('touchmove', preventDefault, { passive: false });
+    window.removeEventListener('keydown', preventDefaultForScrollKeys, { passive: false });
+}
+
+function preventDefault(e) {
+    e.preventDefault();
+}
+
+function preventDefaultForScrollKeys(e) {
+    // Kaydırma için kullanılan tuşlar
+    if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+    }
+}
+
+var keys = {
+    37: 1, 38: 1, 39: 1, 40: 1
+};
+
+window.addEventListener('load', function() {
+    // Kaydırmayı devre dışı bırak
+    disableScroll();
+
+    setTimeout(function() {
+        // Yükleme ekranını gizle
+        document.getElementById('loadingScreen').classList.add('hidden');
+        // Kaydırmayı etkinleştir
+        enableScroll();
+    }, 1500); // 3 saniye bekle
+});
