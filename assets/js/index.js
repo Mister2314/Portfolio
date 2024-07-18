@@ -12,7 +12,7 @@ emailjs.send("service_2gz7a1z", "template_vwf7v3v", params).then(function (res) 
 })
 }
 
-  // Kaydırmayı devre dışı bırakmak için fonksiyon
+
   function disableScroll() {
     window.addEventListener('scroll', preventDefault, { passive: false });
     window.addEventListener('wheel', preventDefault, { passive: false });
@@ -20,7 +20,7 @@ emailjs.send("service_2gz7a1z", "template_vwf7v3v", params).then(function (res) 
     window.addEventListener('keydown', preventDefaultForScrollKeys, { passive: false });
 }
 
-// Kaydırmayı etkinleştirmek için fonksiyon
+
 function enableScroll() {
     window.removeEventListener('scroll', preventDefault, { passive: false });
     window.removeEventListener('wheel', preventDefault, { passive: false });
@@ -33,7 +33,7 @@ function preventDefault(e) {
 }
 
 function preventDefaultForScrollKeys(e) {
-    // Kaydırma için kullanılan tuşlar
+    
     if (keys[e.keyCode]) {
         preventDefault(e);
         return false;
@@ -45,13 +45,13 @@ var keys = {
 };
 
 window.addEventListener('load', function() {
-    // Kaydırmayı devre dışı bırak
+
     disableScroll();
 
     setTimeout(function() {
-        // Yükleme ekranını gizle
+      
         document.getElementById('loadingScreen').classList.add('hidden');
-        // Kaydırmayı etkinleştir
+       
         enableScroll();
-    }, 1500); // 3 saniye bekle
+    }, 1500); 
 });

@@ -124,7 +124,7 @@ My knowledge is too little to be a developer, but I'm doing my best to learn. I'
     window.addEventListener('keydown', preventDefaultForScrollKeys, { passive: false });
 }
 
-// Kaydırmayı etkinleştirmek için fonksiyon
+
 function enableScroll() {
     window.removeEventListener('scroll', preventDefault, { passive: false });
     window.removeEventListener('wheel', preventDefault, { passive: false });
@@ -137,7 +137,7 @@ function preventDefault(e) {
 }
 
 function preventDefaultForScrollKeys(e) {
-    // Kaydırma için kullanılan tuşlar
+
     if (keys[e.keyCode]) {
         preventDefault(e);
         return false;
@@ -149,15 +149,15 @@ var keys = {
 };
 
 window.addEventListener('load', function() {
-    // Kaydırmayı devre dışı bırak
+
     disableScroll();
 
     setTimeout(function() {
-        // Yükleme ekranını gizle
+ 
         document.getElementById('loadingScreen').classList.add('hidden');
-        // Kaydırmayı etkinleştir
+
         enableScroll();
-    }, 1500); // 3 saniye bekle
+    }, 1500);
 });
       </script>
 </body>

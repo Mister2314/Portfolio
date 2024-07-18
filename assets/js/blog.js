@@ -48,7 +48,7 @@ window.onload = function() {
           new TxtType(elements[i], JSON.parse(toRotate), period);
         }
     }
-    // INJECT CSS
+
     var css = document.createElement("style");
     css.type = "text/css";
     css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
@@ -63,7 +63,6 @@ function disableScroll() {
     window.addEventListener('keydown', preventDefaultForScrollKeys, { passive: false });
 }
 
-// Kaydırmayı etkinleştirmek için fonksiyon
 function enableScroll() {
     window.removeEventListener('scroll', preventDefault, { passive: false });
     window.removeEventListener('wheel', preventDefault, { passive: false });
@@ -76,7 +75,7 @@ function preventDefault(e) {
 }
 
 function preventDefaultForScrollKeys(e) {
-    // Kaydırma için kullanılan tuşlar
+    
     if (keys[e.keyCode]) {
         preventDefault(e);
         return false;
@@ -88,13 +87,13 @@ var keys = {
 };
 
 window.addEventListener('load', function() {
-    // Kaydırmayı devre dışı bırak
+    
     disableScroll();
 
     setTimeout(function() {
-        // Yükleme ekranını gizle
+     
         document.getElementById('loadingScreen').classList.add('hidden');
-        // Kaydırmayı etkinleştir
+       
         enableScroll();
-    }, 1500); // 3 saniye bekle
+    }, 1500); 
 });
