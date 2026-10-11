@@ -57,7 +57,7 @@ It is deliberately kept in the repo as a record of where I started — the layou
 
 ```mermaid
 flowchart LR
-  A["Browser"] --> B["Markup<br/>HTML5"] --> C["Styling<br/>CSS3"] --> D["Animation<br/>AOS"] --> E["Logic<br/>Vanilla JavaScript (`index.js`"] --> F["Deploy"]
+  A["Browser"] --> B["Markup<br/>HTML5"] --> C["Styling<br/>CSS3"] --> D["Animation<br/>AOS"] --> E["Logic<br/>Vanilla JavaScript (index.js"] --> F["Deploy"]
 ```
 
 ## Screenshots
