@@ -1,23 +1,38 @@
-# Morfyus — Multi-Page Personal Site
+<h1 align="center">Morfyus — Multi-Page Personal Site</h1>
 
-**A five-page personal site — home, work, blog, about and contact — built with Bootstrap 5 and scroll animations.**
+<p align="center"><b>A five-page personal site — home, work, blog, about and contact — built with Bootstrap 5 and scroll animations.</b></p>
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-mister2314.github.io/Portfolio-2ea44f?style=flat-square&logo=vercel&logoColor=white)](https://mister2314.github.io/Portfolio/)
+<p align="center">
+[![Live Demo](https://img.shields.io/badge/Live_Demo-▶-2ea44f?style=for-the-badge&logo=vercel&logoColor=white)](https://mister2314.github.io/Portfolio/)
 ![HTML5](https://img.shields.io/badge/HTML5-e34f26?style=flat-square&logoColor=white)
 ![Bootstrap 5](https://img.shields.io/badge/Bootstrap_5-7952b3?style=flat-square&logoColor=white)
 ![AOS](https://img.shields.io/badge/AOS-0969da?style=flat-square&logoColor=white)
+</p>
+
+<p align="center">[**Live demo**](https://mister2314.github.io/Portfolio/) · [Quick start](#quick-start) · [Features](#features) · [Architecture](#architecture) · [FAQ](#faq)</p>
 
 <p align="center">
   <a href="https://mister2314.github.io/Portfolio/">
-    <img src="docs/preview.png" alt="Morfyus — Multi-Page Personal Site — desktop preview" width="100%">
+    <img src="docs/demo.gif" alt="Morfyus — Multi-Page Personal Site — animated demo" width="88%">
   </a>
 </p>
+
+<p align="center"><sub>Live capture of the real build — 1705 KB, loops forever.</sub></p>
 
 ## Overview
 
 My first attempt at a real multi-page site. Five pages share one header, one footer and one stylesheet, with Bootstrap 5 handling the grid and responsive utilities and a small script managing the loading screen and page behaviour.
 
 It is deliberately kept in the repo as a record of where I started — the layout thinking is here, even if the code is not what I would write now.
+
+## At a glance
+
+| Field | Detail |
+| --- | --- |
+| **Type** | Static site — no build step |
+| **Primary language** | CSS |
+| **Live demo** | [mister2314.github.io/Portfolio](https://mister2314.github.io/Portfolio/) |
+| **Repository** | [Mister2314/Portfolio](https://github.com/Mister2314/Portfolio) |
 
 ## Features
 
@@ -38,25 +53,30 @@ It is deliberately kept in the repo as a record of where I started — the layou
 | Logic | Vanilla JavaScript (`index.js`, `blog.js`) |
 | Deploy | GitHub Pages |
 
+## Architecture
+
+```mermaid
+flowchart LR
+  A["Browser"] --> B["Markup<br/>HTML5"] --> C["Styling<br/>CSS3"] --> D["Animation<br/>AOS"] --> E["Logic<br/>Vanilla JavaScript (`index.js`"] --> F["Deploy"]
+```
+
 ## Screenshots
 
 | Desktop | Mobile |
 | :---: | :---: |
 | <img src="docs/preview.png" alt="Desktop view"> | <img src="docs/preview-mobile.png" alt="Mobile view" width="230"> |
 
-## Getting Started
-
-No build step and no dependencies — clone the repo and open the entry file, or serve the folder locally:
+## Quick Start
 
 ```bash
 git clone https://github.com/Mister2314/Portfolio.git
 cd Portfolio
 
-# Option 1 — open it directly
+# open it directly
 start index.html      # Windows
 open  index.html      # macOS
 
-# Option 2 — serve it locally
+# or serve the folder
 npx serve .
 ```
 
