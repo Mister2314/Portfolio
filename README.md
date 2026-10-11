@@ -3,13 +3,13 @@
 <p align="center"><b>A five-page personal site — home, work, blog, about and contact — built with Bootstrap 5 and scroll animations.</b></p>
 
 <p align="center">
-[![Live Demo](https://img.shields.io/badge/Live_Demo-▶-2ea44f?style=for-the-badge&logo=vercel&logoColor=white)](https://mister2314.github.io/Portfolio/)
-![HTML5](https://img.shields.io/badge/HTML5-e34f26?style=flat-square&logoColor=white)
-![Bootstrap 5](https://img.shields.io/badge/Bootstrap_5-7952b3?style=flat-square&logoColor=white)
-![AOS](https://img.shields.io/badge/AOS-0969da?style=flat-square&logoColor=white)
+<a href="https://mister2314.github.io/Portfolio/"><img src="https://img.shields.io/badge/Live_Demo-2ea44f?style=flat-square&logo=vercel&logoColor=white" alt="Live demo" height="28"></a>
+<img src="https://img.shields.io/badge/HTML5-e34f26?style=flat-square" alt="HTML5" height="20">
+<img src="https://img.shields.io/badge/Bootstrap_5-7952b3?style=flat-square" alt="Bootstrap 5" height="20">
+<img src="https://img.shields.io/badge/AOS-0969da?style=flat-square" alt="AOS" height="20">
 </p>
 
-<p align="center">[**Live demo**](https://mister2314.github.io/Portfolio/) · [Quick start](#quick-start) · [Features](#features) · [Architecture](#architecture) · [FAQ](#faq)</p>
+<p align="center"><a href="https://mister2314.github.io/Portfolio/"><b>Live demo</b></a> &nbsp;·&nbsp; <a href="#quick-start">Quick start</a> &nbsp;·&nbsp; <a href="#features">Features</a> &nbsp;·&nbsp; <a href="#architecture">Architecture</a> &nbsp;·&nbsp; <a href="#faq">FAQ</a></p>
 
 <p align="center">
   <a href="https://mister2314.github.io/Portfolio/">
@@ -89,6 +89,34 @@ assets/css/ — one stylesheet per page plus a shared style.css
 assets/js/index.js — shared behaviour and loading screen
 assets/js/blog.js — blog page logic
 ```
+
+## FAQ
+
+<details>
+<summary><b>Is this the current portfolio?</b></summary>
+
+No. This is my first multi-page site, kept public as a baseline. The current work is **Khayal Verse** and **Hypnos.dev**.
+
+</details>
+
+<details>
+<summary><b>Why Bootstrap?</b></summary>
+
+It was the fastest way to learn responsive layout at the time. I would write the grid by hand now — that is what the newer projects do.
+
+</details>
+
+<details>
+<summary><b>How do the pages share a header and footer?</b></summary>
+
+They do not, technically — each page repeats the markup. A build step or a templating layer would remove the duplication, and that is exactly the lesson this project taught me.
+
+</details>
+
+## Roadmap
+
+- [ ] Archive it and redirect to the current portfolio
+- [ ] Note in the header that it is a 2024 build
 
 ## Notes
 
