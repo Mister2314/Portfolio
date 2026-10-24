@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import TransitionLink from "../TransitionLink";
 import Header from "../Header";
 import PageStyles from "../PageStyles";
 import { useAos } from "../useAos";
@@ -19,7 +19,7 @@ export default function MoreAbout() {
 
       <section className="hero">
         <div className="left-page">
-          <div data-aos="fade-up" className="box-container">
+          <div data-aos="mask" className="box-container">
             <div className="box">
               <div className="box-top">
                 <img src="/img/Kaneki Ken Icon.png" alt="" />
@@ -65,14 +65,14 @@ export default function MoreAbout() {
                 </a>
               </div>
 
-              <Link to="/contact" className="box-bottom">
+              <TransitionLink to="/contact" className="box-bottom">
                 <p>Contact Me</p>
-              </Link>
+              </TransitionLink>
             </div>
           </div>
         </div>
         <div className="right-page">
-          <div data-aos="fade-up" className="right-first">
+          <div data-aos="rise" className="right-first">
             <h2>ABOUT ME</h2>
             <p>
               Hi. My name is Xeyal and I'm 17 years old. I'm studying at the
@@ -86,7 +86,7 @@ export default function MoreAbout() {
               knowledge of JS is very little.
             </p>
           </div>
-          <div data-aos="fade-up" className="right-second">
+          <div data-aos="rise" data-aos-delay="120" className="right-second">
             <h2>EDUCATION</h2>
             <h5>2022-2025</h5>
             <h4>
@@ -96,43 +96,38 @@ export default function MoreAbout() {
               College of İndustry and Technology
             </h6>
             <p>
-              Sit amet luctussd fav venenatis, lectus magna fringilla inis urna,
-              porttitor rhoncus dolor purus non enim praesent in elementum sahas
-              facilisis leo, vel fringilla est ullamcorper eget nulla facilisi
-              etisam dignissim diam quis enim lobortis viverra orci sagittis eu
-              volutpat odio facilisis mauris sit.
+              Two years of hands-on networking — assembling, wiring and keeping
+              computer labs alive. It taught me how machines actually work
+              underneath the browser window.
             </p>
             <h5>2022.07-2022.11</h5>
             <h4>Front End Developer</h4>
             <h6>Matrix Academy</h6>
             <p>
-              Sit amet luctussd fav venenatis, lectus magna fringilla inis urna,
-              porttitor rhoncus dolor purus non enim praesent in elementum sahas
-              facilisis leo, vel fringilla est ullamcorper eget nulla facilisi
-              etisam dignissim diam quis enim lobortis viverra orci sagittis eu
-              volutpat odio facilisis mauris sit.
+              A four-month intensive covering HTML, CSS and the first steps into
+              JavaScript — and the place where I built my first real web pages.
             </p>
           </div>
-          <div data-aos="fade-up" className="right-end">
+          <div data-aos="pop" data-aos-delay="200" className="right-end">
             <div className="right-end-left">
               <h2>SKILLS</h2>
               <span>70%</span>
               <h4>HTML</h4>
-              <p>Non enim praesent</p>
+              <p>Semantic markup and accessible structure</p>
 
               <span>70%</span>
               <h4>CSS</h4>
-              <p>Non enim praesent</p>
+              <p>Layout, animation and responsive design</p>
 
               <span>10%</span>
               <h4>JavaScript</h4>
-              <p>Non enim praesent</p>
+              <p>DOM, events and React basics — in progress</p>
             </div>
             <div className="right-end-right">
               <h2>AWARDS</h2>
               <span>Matrix Academy</span>
               <h4>Front End Development</h4>
-              <p>Non enim praesent</p>
+              <p>Course certificate, 2022</p>
             </div>
           </div>
         </div>

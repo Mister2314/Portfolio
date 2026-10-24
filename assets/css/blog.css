@@ -153,3 +153,54 @@ header{
     font-family: 'Inter', sans-serif;
     font-weight: 500;
 }
+/* ---------- Typewriter caret (pack §4.4) ---------- */
+.typewrite > .wrap {
+  border-right: 0.08em solid #fff;
+  animation: caretBlink 1.1s steps(1) infinite;
+}
+@keyframes caretBlink {
+  0%, 49% { border-color: #fff; }
+  50%, 100% { border-color: transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .typewrite > .wrap {
+    animation: none;
+  }
+}
+
+/* ---------- Mobile composition (=768px) ---------- */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 32px !important;
+    padding: 0 16px;
+    text-align: center;
+  }
+}
+
+/* ---------- Mobile header: logo + pill row 1, nav full-width row 2 (no overlap) ---------- */
+@media (max-width: 768px) {
+  .header-container {
+    width: 92%;
+    flex-wrap: wrap;
+    gap: 12px 8px;
+  }
+  .headerbox1 {
+    width: auto;
+    flex: 1 1 auto;
+  }
+  .headerbox3 {
+    width: auto;
+    margin-left: auto;
+  }
+  .headerbox2 {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .headerbox2 ul {
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

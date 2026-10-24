@@ -5,30 +5,40 @@ import { useAos } from "../useAos";
 import { useLoadingScreen } from "../useLoadingScreen";
 import emailjs from "@emailjs/browser";
 
+type FormStatus = "idle" | "sending" | "success" | "error";
+
 export default function Contact() {
   useAos();
   useLoadingScreen(1500, true);
-
-  emailjs.init("jiBeXM6uAI-ZEhXCi");
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [touched, setTouched] = useState(false);
 
-  function SendMail() {
-    const params = {
-      name_id: name,
-      email_id: email,
-      subject: subject,
-      message: message,
-    };
-    emailjs
-      .send("service_2gz7a1z", "template_vwf7v3v", params)
-      .then(function (res) {
-        alert("Success!" + res.status);
-        location.reload();
+  const nameValid = name.trim().length > 0;
+  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+  const messageValid = message.trim().length > 0;
+  const formValid = nameValid && emailValid && messageValid;
+
+  async function SendMail(e: React.FormEvent) {
+    e.preventDefault();
+    setTouched(true);
+    if (!formValid || status === "sending") return;
+    setStatus("sending");
+    try {
+      await emailjs.send("service_2gz7a1z", "template_vwf7v3v", {
+        name_id: name,
+        email_id: email,
+        subject: subject,
+        message: message,
       });
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -42,7 +52,7 @@ export default function Contact() {
 
       <section className="hero">
         <div className="hero-container">
-          <div data-aos="fade-up" className="hero-box1-left">
+          <div data-aos="rise" className="hero-box1-left">
             <h3>Contact Info</h3>
             <div className="hero-box1-left-boxes">
               <div className="boxes">
@@ -89,7 +99,6 @@ export default function Contact() {
                 <div className="boxes-right">
                   <span>Contact Me</span>
                   <h4>+994 50 703 21 86</h4>
-                  <h4>+994 50 703 21 86</h4>
                 </div>
               </div>
               <div className="boxes">
@@ -108,41 +117,46 @@ export default function Contact() {
                 </div>
                 <div className="boxes-right">
                   <span>Location</span>
-                  <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
+                  <h4>Baku, Azerbaijan</h4>
                 </div>
               </div>
             </div>
           </div>
-          <div data-aos="fade-up" className="hero-box1-right">
+          <div data-aos="rise" data-aos-delay="140" className="hero-box1-right">
             <h1>
               Let’s work <span>together.</span>
             </h1>
-            <div className="form-container">
+            <form className="form-container" onSubmit={SendMail} noValidate>
+              <label className="sr-only" htmlFor="name_id">Name</label>
               <input
                 type="text"
                 placeholder="Name *"
                 required
                 id="name_id"
+                aria-invalid={touched && !nameValid}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
+              <label className="sr-only" htmlFor="email_id">Email</label>
               <input
                 type="email"
                 placeholder="Email *"
                 required
                 id="email_id"
+                aria-invalid={touched && !emailValid}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
+              <label className="sr-only" htmlFor="subject">Subject</label>
               <input
                 type="text"
-                required
-                placeholder="Your Subject *"
+                placeholder="Your Subject"
                 id="subject"
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
               />
 
+              <label className="sr-only" htmlFor="message">Message</label>
               <textarea
                 name="message"
                 required
@@ -150,11 +164,39 @@ export default function Contact() {
                 cols={30}
                 rows={10}
                 placeholder="Your Message *"
+                aria-invalid={touched && !messageValid}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>
-              <button onClick={SendMail}>Send Message</button>
-            </div>
+
+              <div aria-live="polite" className="form-status">
+                {touched && !formValid && status !== "success" && (
+                  <p className="form-error" role="alert">
+                    Please fill in your name, a valid email and a message.
+                  </p>
+                )}
+                {status === "success" && (
+                  <p className="form-success">Message sent — I’ll get back to you soon.</p>
+                )}
+                {status === "error" && (
+                  <p className="form-error" role="alert">
+                    Something went wrong. Try again or email me directly.
+                  </p>
+                )}
+              </div>
+
+              <button
+                type="submit"
+                disabled={status === "sending" || status === "success"}
+                className={status === "sending" ? "is-sending" : ""}
+              >
+                {status === "sending"
+                  ? "Sending…"
+                  : status === "success"
+                    ? "Sent ✓"
+                    : "Send Message"}
+              </button>
+            </form>
           </div>
         </div>
       </section>

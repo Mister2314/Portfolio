@@ -69,11 +69,17 @@ export default function Blog() {
       const toRotate = el.getAttribute("data-type");
       const period = el.getAttribute("data-period");
       if (toRotate) {
-        writer = new TxtType(
-          el,
-          JSON.parse(toRotate) as string[],
-          period
-        );
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          // Reduced motion: print the phrase once, no loop, still caret.
+          const first = (JSON.parse(toRotate) as string[])[0];
+          el.innerHTML = '<span class="wrap">' + first + "</span>";
+        } else {
+          writer = new TxtType(
+            el,
+            JSON.parse(toRotate) as string[],
+            period
+          );
+        }
       }
     }
 

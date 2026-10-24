@@ -354,3 +354,89 @@ button:hover{
     background-color: white;
     color: black;
 }
+/* ---------- Form states (pack §4.5) ---------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.form-container input[aria-invalid="true"],
+.form-container textarea[aria-invalid="true"] {
+  border-color: #ff6b6b;
+}
+.form-status {
+  min-height: 1.4em;
+}
+.form-status p {
+  margin: 0;
+  font-size: 14px;
+}
+.form-error {
+  color: #ff8484;
+}
+.form-success {
+  color: #b8f5b8;
+}
+.form-container button {
+  transition: transform 0.15s cubic-bezier(0.2, 0, 0.2, 1), opacity 0.2s;
+}
+.form-container button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.form-container button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* ---------- Mobile composition (=768px) ---------- */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding-top: 96px;
+    padding-bottom: 40px;
+  }
+  .hero-container {
+    width: 92%;
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 28px;
+  }
+  .header-container {
+    width: 92%;
+  }
+}
+
+/* ---------- Mobile header: logo + pill row 1, nav full-width row 2 (no overlap) ---------- */
+@media (max-width: 768px) {
+  .header-container {
+    width: 92%;
+    flex-wrap: wrap;
+    gap: 12px 8px;
+  }
+  .headerbox1 {
+    width: auto;
+    flex: 1 1 auto;
+  }
+  .headerbox3 {
+    width: auto;
+    margin-left: auto;
+  }
+  .headerbox2 {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .headerbox2 ul {
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

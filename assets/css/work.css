@@ -477,3 +477,94 @@ margin-bottom: 5px;
 .hero-left-second:hover svg{
     color: white;
 }
+/* ---------- Work cards: hover / press (pack §4.3) ---------- */
+.hero-left-first,
+.hero-left-second,
+.hero-left-third {
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1);
+}
+.hero-left-first:active,
+.hero-left-second:active,
+.hero-left-third:active {
+  transform: scale(0.97);
+}
+.hero-left-middle img,
+.hero-left-middle2 img,
+.hero-left-middle3 img {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero-left-first:hover .hero-left-middle img,
+.hero-left-second:hover .hero-left-middle2 img,
+.hero-left-third:hover .hero-left-middle3 img {
+  transform: scale(1.045);
+}
+.hero-left-bottom-icon svg,
+.hero-left-bottom-icon3 svg,
+.hero-left-bottom-icon4 svg {
+  transition: transform 0.25s cubic-bezier(0.2, 0, 0.2, 1);
+}
+.hero-left-first:hover .hero-left-bottom-icon svg,
+.hero-left-second:hover .hero-left-bottom-icon svg,
+.hero-left-third:hover .hero-left-bottom-icon3 svg {
+  transform: translateX(6px);
+}
+a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* ---------- Mobile composition (=768px): single column, auto height ---------- */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding-top: 96px;
+    padding-bottom: 40px;
+  }
+  .hero-container {
+    width: 92%;
+    height: auto;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .hero-left,
+  .hero-right {
+    width: 100%;
+    height: auto;
+  }
+  .hero-right-container {
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+  }
+  .header-container {
+    width: 92%;
+  }
+}
+
+/* ---------- Mobile header: logo + pill row 1, nav full-width row 2 (no overlap) ---------- */
+@media (max-width: 768px) {
+  .header-container {
+    width: 92%;
+    flex-wrap: wrap;
+    gap: 12px 8px;
+  }
+  .headerbox1 {
+    width: auto;
+    flex: 1 1 auto;
+  }
+  .headerbox3 {
+    width: auto;
+    margin-left: auto;
+  }
+  .headerbox2 {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .headerbox2 ul {
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

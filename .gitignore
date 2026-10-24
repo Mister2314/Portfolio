@@ -4,3 +4,5 @@ dist
 tsconfig.tsbuildinfo
 .vercel
 .env*
+
+_scratch/

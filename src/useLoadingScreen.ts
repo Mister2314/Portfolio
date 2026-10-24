@@ -7,6 +7,10 @@ import { useEffect } from "react";
  */
 export function useLoadingScreen(duration: number, lockScroll: boolean) {
   useEffect(() => {
+    // Reduced motion: the unanimated page is the complete page — no loader beat.
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const wait = reduced ? 0 : duration;
+
     const preventDefault = (e: Event) => e.preventDefault();
 
     function disableScroll() {
@@ -32,7 +36,7 @@ export function useLoadingScreen(duration: number, lockScroll: boolean) {
       if (lockScroll) {
         enableScroll();
       }
-    }, duration);
+    }, wait);
 
     return () => {
       clearTimeout(timeout);
@@ -40,5 +44,4 @@ export function useLoadingScreen(duration: number, lockScroll: boolean) {
         enableScroll();
       }
     };
-  }, [duration, lockScroll]);
-}
+  }, [duration, lockScroll]);}

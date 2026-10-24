@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import TransitionLink from "../TransitionLink";
 import Header from "../Header";
 import PageStyles from "../PageStyles";
 import { useAos } from "../useAos";
@@ -51,7 +51,7 @@ export default function Index() {
       <section className="hero">
         <div className="hero-container">
           <div className="s1-box1-container">
-            <a data-aos="fade-up" href="#">
+            <a data-aos="mask" href="#">
               <div className="s1-box1">
                 <div className="s1-imgbox">
                   <img src="/img/Kaneki Ken Icon.png" alt="" />
@@ -67,14 +67,14 @@ export default function Index() {
             </a>
 
             <div className="s1-rightbox1">
-              <div data-aos="fade-up" className="s1-rightbox1-top">
+              <div data-aos="rise" data-aos-delay="80" className="s1-rightbox1-top">
                 <p>
                   LATEST WORK AND <span>FEATURED</span> {StarSvg} LATEST WORK AND{" "}
                   <span>FEATURED</span> {StarSvg}{" "}
                 </p>
               </div>
               <div className="s1-rightbox1-bottom">
-                <Link data-aos="fade-up" to="/moreabout">
+                <TransitionLink data-aos="rise" data-aos-delay="160" to="/moreabout">
                   <div className="s1-rightbox1-bottom-boxes">
                     <div className="s1-rightbox1-bottom-boxes-img">
                       <img src="/img/Signature.png" alt="" />
@@ -89,8 +89,8 @@ export default function Index() {
                       </div>
                     </div>
                   </div>
-                </Link>
-                <Link data-aos="fade-up" to="/work">
+                </TransitionLink>
+                <TransitionLink data-aos="rise" data-aos-delay="240" to="/work">
                   <div className="s1-rightbox1-bottom-boxes">
                     <div className="s1-rightbox1-top1">
                       <img src="/img/my-works.png" alt="" />
@@ -106,13 +106,13 @@ export default function Index() {
                       </div>
                     </div>
                   </div>
-                </Link>
+                </TransitionLink>
               </div>
             </div>
           </div>
 
           <div className="s2-boxes-container">
-            <Link data-aos="fade-up" className="s2-box1-a1" to="/blog">
+            <TransitionLink data-aos="rise" data-aos-delay="120" className="s2-box1-a1" to="/blog">
               <div className="s2-box1">
                 <div className="s2-box1-top">
                   <img src="/img/gfonts.png" alt="" />
@@ -125,8 +125,8 @@ export default function Index() {
                   <div className="s2-box1-bottom-rightbox">{ArrowSvg}</div>
                 </div>
               </div>
-            </Link>
-            <Link data-aos="fade-up" className="work-together-aa" to="/contact">
+            </TransitionLink>
+            <TransitionLink data-aos="rise" data-aos-delay="320" className="work-together-aa" to="/contact">
               <div className="work-together">
                 <img
                   className="work-together-img"
@@ -139,9 +139,9 @@ export default function Index() {
                 </h1>
                 {ArrowSvg}
               </div>
-            </Link>
+            </TransitionLink>
 
-            <div data-aos="fade-up" className="s2-box3">
+            <div data-aos="pop" data-aos-delay="200" className="s2-box3">
               <div className="s2-box3-top">
                 <a
                   className="s2-box3-a3"

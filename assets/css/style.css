@@ -854,3 +854,74 @@ bottom: 30px;
     color: white;
 }
 
+
+/* ---------- Mobile composition (=768px): bento stacks to one column (pack §4.7) ---------- */
+@media (max-width: 768px) {
+  .header-container {
+    width: 92%;
+    flex-wrap: wrap;
+    gap: 12px 8px;
+  }
+  /* Mobile header: logo + pill on row 1, nav full-width on row 2 — no overlap */
+  .headerbox1 {
+    width: auto !important;
+    flex: 1 1 auto;
+  }
+  .headerbox3 {
+    width: auto !important;
+    margin-left: auto;
+  }
+  .headerbox2 {
+    order: 3;
+    width: 100% !important;
+    justify-content: flex-start !important;
+  }
+  .headerbox2 ul {
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    width: 100%;
+    justify-content: flex-start !important;
+  }
+  .hero {
+    height: auto;
+    padding-top: 90px;
+    padding-bottom: 32px;
+  }
+  .hero-container {
+    width: 92%;
+    height: auto;
+  }
+  .s1-box1-container {
+    flex-direction: column;
+    height: auto;
+    padding-left: 0;
+    gap: 16px;
+  }
+  .s1-box1-container > a {
+    display: block;
+  }
+  .s1-box1 {
+    height: auto;
+  }
+  .s1-rightbox1 {
+    height: auto;
+  }
+  .s1-rightbox1-bottom,
+  .s2-boxes-container {
+    flex-direction: column;
+    height: auto;
+    gap: 14px;
+  }
+  .s2-boxes-container {
+    margin-left: 0;
+    margin-top: 16px;
+  }
+  .s2-box1,
+  .work-together,
+  .s2-box3 {
+    height: auto;
+  }
+  .loadpage .animate {
+    font-size: 16px;
+  }
+}

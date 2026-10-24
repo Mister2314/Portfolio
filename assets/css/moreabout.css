@@ -401,3 +401,58 @@ background-color: transparent;
     font-size: 18px;
     margin-bottom: 10px;
 }
+
+/* ---------- Mobile composition (=768px) ---------- */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    flex-direction: column;
+    padding-top: 96px;
+    padding-bottom: 40px;
+  }
+  .left-page,
+  .right-page {
+    width: 92%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+    flex-direction: column;
+  }
+  .right-page {
+    padding-top: 24px;
+  }
+  .box-container {
+    justify-content: center;
+  }
+  .header-container {
+    width: 92%;
+  }
+}
+
+/* ---------- Mobile header: logo + pill row 1, nav full-width row 2 (no overlap) ---------- */
+@media (max-width: 768px) {
+  .header-container {
+    width: 92%;
+    flex-wrap: wrap;
+    gap: 12px 8px;
+  }
+  .headerbox1 {
+    width: auto;
+    flex: 1 1 auto;
+  }
+  .headerbox3 {
+    width: auto;
+    margin-left: auto;
+  }
+  .headerbox2 {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .headerbox2 ul {
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

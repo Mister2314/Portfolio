@@ -1,6 +1,6 @@
 # Portfolio
 
-"Morfyus" — my first multi-page personal site: five HTML pages (home, work, blog, about, contact) on Bootstrap 5.
+"Morfyus" — my personal site: five routes (home, about, work, blog, contact) built on React 19 + Vite, evolved from the original multi-page HTML version while keeping its bento-grid identity.
 
 **Live demo:** <https://portfolio-morpheus2314s-projects.vercel.app>
 
@@ -25,26 +25,43 @@
 
 ## What it does
 
-A 2024 personal site kept public as a baseline: five linked pages sharing one stylesheet and a shared visual shell, with Bootstrap 5 handling the grid and responsive utilities. A vanilla-JS script manages the animated loading screen, a second one drives the blog page, and AOS adds scroll-in animations across every page.
+A personal portfolio in near-black monochrome: the home page is an asymmetric bento grid of cards, each route injects only its own stylesheet (so page styles can never collide), and every page carries a short loading beat that client-side navigation now preserves as a smooth surface swap.
 
 ## Tech stack
 
-React 19 · TypeScript · Vite · Bootstrap 5
+React 19 · TypeScript · Vite · React Router 7 · Bootstrap 5 (home grid only) · View Transitions API
 
 ## Features
 
-- Five linked pages: home, work, blog, about, contact
-- Animated loading screen on entry
-- AOS scroll-in animations across all pages
-- Dedicated blog page with its own script
-- One stylesheet per page plus a shared `style.css`
+- Five routes with per-route CSS `<link>` injection — page styles mount and unmount cleanly
+- Route transitions via the View Transitions API (260ms cross-fade), with a CSS-fade fallback for older browsers
+- Varied reveal rhythm per page (mask-rise titles, staggered card rises) instead of one uniform fade
+- Work cards with hover zoom, arrow nudge and press feedback; keyboard-focusable with visible focus rings
+- Blog typewriter with a blinking caret and a static reduced-motion fallback
+- Contact form with real states — validation, sending, success, error — instead of `alert()` + reload, via EmailJS
+- Full mobile compositions for all five routes (single-column bento, stacked header, 1-col work grid)
+- `prefers-reduced-motion` honored everywhere: no loader beat, static reveals, no caret blink
 
 ## Run locally
 
 ```bash
 git clone https://github.com/Mister2314/Portfolio.git
 cd Portfolio
-npx serve .   # or just open index.html
+npm install
+npm run dev      # dev server
+npm run build    # type-check + production build
 ```
 
-Limitation: each page repeats the header and footer markup — no templating layer, which is the main lesson this project taught me.
+## Structure
+
+```
+src/
+├── main.tsx              # router + route table
+├── TransitionLink.tsx    # View Transitions wrapper around React Router Link
+├── PageStyles.tsx        # per-route stylesheet injection
+├── Header.tsx            # shared nav (aria-current, keyboard focus)
+├── useAos.ts             # IntersectionObserver reveals with per-element stagger
+├── useLoadingScreen.ts   # per-route loading beat (skipped under reduced motion)
+└── pages/                # Index · MoreAbout · Work · Blog · Contact
+assets/css/               # one stylesheet per page, served as static assets
+```

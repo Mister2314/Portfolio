@@ -41,7 +41,7 @@ export default function Work() {
               href="https://mister2314.github.io/Final-Project/"
               target="_blank"
             >
-              <div data-aos="fade-up" className="hero-left-top">
+              <div data-aos="mask" className="hero-left-top">
                 <div className="hero-left-middle">
                   <img src="/img/Gamestorm.png" alt="" />
                 </div>
@@ -59,7 +59,7 @@ export default function Work() {
               href="https://mister2314.github.io/First-Project/"
               target="_blank"
             >
-              <div data-aos="fade-up" className="hero-left-top3">
+              <div data-aos="rise" data-aos-delay="120" className="hero-left-top3">
                 <div className="hero-left-middle3">
                   <img src="/img/wade.png" alt="" />
                 </div>
@@ -74,7 +74,7 @@ export default function Work() {
             </a>
           </div>
           <div className="hero-right">
-            <div data-aos="fade-up" className="hero-box1-right-top">
+            <div data-aos="pop" className="hero-box1-right-top">
               <h1>
                 <img src="/img/star-2.png" alt="" />
                 ALL PROJECTS
@@ -87,7 +87,7 @@ export default function Work() {
                 href="https://mister2314.github.io/Motorcycle-Website/"
                 target="_blank"
               >
-                <div data-aos="fade-up" className="hero-left-top2">
+                <div data-aos="rise" className="hero-left-top2">
                   <div className="hero-left-middle2">
                     <img src="/img/grand prix.png" alt="" />
                   </div>
@@ -106,7 +106,7 @@ export default function Work() {
                 href="https://mister2314.github.io/Film-Website/"
                 target="_blank"
               >
-                <div data-aos="fade-up" className="hero-left-top2">
+                <div data-aos="rise" className="hero-left-top2">
                   <div className="hero-left-middle2">
                     <img src="/img/trending releases.png" alt="" />
                   </div>
@@ -124,7 +124,7 @@ export default function Work() {
                 href="https://mister2314.github.io/Hsr-template/"
                 target="_blank"
               >
-                <div data-aos="fade-up" className="hero-left-top2">
+                <div data-aos="rise" className="hero-left-top2">
                   <div className="hero-left-middle2">
                     <img src="/img/Hsr.jpg" alt="" />
                   </div>
@@ -138,7 +138,7 @@ export default function Work() {
                 </div>
               </a>
               <a className="hero-left-second" href="">
-                <div data-aos="fade-up" className="hero-left-top2">
+                <div data-aos="rise" className="hero-left-top2">
                   <div className="hero-left-middle2">
                     <img src="/img/coming soon.png" alt="" />
                   </div>

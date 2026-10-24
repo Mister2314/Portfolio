@@ -26,6 +26,8 @@ export function useAos() {
     );
 
     for (const el of elements) {
+      const delay = el.getAttribute("data-aos-delay");
+      if (delay) el.style.setProperty("--aos-delay", `${delay}ms`);
       observer.observe(el);
     }
 

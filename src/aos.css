@@ -1,19 +1,48 @@
 /* AOS-equivalent reveal styles, driven by the useAos() IntersectionObserver hook.
-   Mirrors aos@2.3.1 defaults: duration 400ms, easing ease, offset 120px, once: false. */
+   Motion language (see studio/bus/threads/pack__portfolio.md): 3 easings only —
+   expo-style arrivals (cubic-bezier(0.16,1,0.3,1)), power2 state (cubic-bezier(0.2,0,0.2,1)),
+   linear (marquee/caret). Durations vary by intent: titles 0.9s, cards 0.6–0.75s, state 0.2–0.35s. */
 
 [data-aos] {
-  transition-property: transform, opacity;
-  transition-duration: 0.4s;
-  transition-timing-function: ease;
+  transition-property: transform, opacity, clip-path;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.2, 0, 0.2, 1);
 }
 
-[data-aos^="fade"][data-aos^="fade"] {
+[data-aos^="fade"][data-aos^="fade"],
+[data-aos="rise"],
+[data-aos="pop"] {
   opacity: 0;
   transition-property: opacity, transform;
 }
 
 [data-aos="fade-up"] {
   transform: translate3d(0, 100px, 0);
+  transition-duration: 0.75s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Editorial card rise: shorter travel, faster arrival than the legacy fade-up */
+[data-aos="rise"] {
+  transform: translate3d(0, 28px, 0);
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-aos="pop"] {
+  transform: scale(0.96);
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Title mask-rise: text lifts out of an overflow mask, 0.9s expo-style */
+[data-aos="mask"] {
+  opacity: 1;
+  clip-path: inset(0 0 100% 0);
+  transform: translate3d(0, 24px, 0);
+  transition-property: transform, clip-path;
+  transition-duration: 0.9s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 [data-aos^="zoom"][data-aos^="zoom"] {
@@ -23,14 +52,90 @@
 
 [data-aos="zoom-out"] {
   transform: scale(1.2);
+  transition-duration: 0.5s;
 }
 
 [data-aos^="fade"][data-aos^="fade"].aos-animate,
-[data-aos^="zoom"][data-aos^="zoom"].aos-animate {
+[data-aos="rise"].aos-animate,
+[data-aos="pop"].aos-animate {
   opacity: 1;
   transform: translateZ(0) scale(1);
 }
 
 [data-aos="fade-up"].aos-animate {
   transform: translate3d(0, 0, 0);
+}
+
+[data-aos="mask"].aos-animate {
+  clip-path: inset(0 0 0 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* Optional per-element stagger: data-aos-delay="n" (ms) */
+[data-aos][data-aos-delay] {
+  transition-delay: 0ms;
+}
+[data-aos].aos-animate[data-aos-delay] {
+  transition-delay: var(--aos-delay, 0ms);
+}
+
+/* ---------- View Transitions (route transitions, Baseline 2025) ---------- */
+/* Fallback for browsers without startViewTransition: a quick CSS fade on route root. */
+.route-fade {
+  animation: routeFade 180ms cubic-bezier(0.2, 0, 0.2, 1);
+}
+@keyframes routeFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 260ms;
+  animation-timing-function: cubic-bezier(0.2, 0, 0.2, 1);
+}
+::view-transition-old(root) {
+  animation-name: vt-out;
+}
+::view-transition-new(root) {
+  animation-name: vt-in;
+}
+@keyframes vt-out {
+  to { opacity: 0; transform: translateY(-8px); }
+}
+@keyframes vt-in {
+  from { opacity: 0; transform: translateY(8px); }
+}
+
+/* ---------- Scroll stability (prevents reload-while-scrolled jumps) ---------- */
+html {
+  scrollbar-gutter: stable;
+  overflow-anchor: none;
+}
+
+/* ---------- Keyboard access ---------- */
+:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- Reduced motion: the unanimated page is the complete page ---------- */
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+  .route-fade {
+    animation: none;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.01ms !important;
+  }
+  .loadpage .animate {
+    animation: none;
+  }
 }

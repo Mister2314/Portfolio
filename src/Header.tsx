@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import TransitionLink from "./TransitionLink";
 
 interface HeaderProps {
   /** Which nav entry points at the current page (rendered with href=""). */
@@ -27,11 +27,11 @@ export default function Header({ current, zoomAll }: HeaderProps) {
             {items.map((item) =>
               item.label === current ? (
                 <li key={item.label} className={item.label}>
-                  <a href="">{item.label}</a>
+                  <a href="" aria-current="page">{item.label}</a>
                 </li>
               ) : (
                 <li key={item.label} className={item.label}>
-                  <Link to={item.to}>{item.label}</Link>
+                  <TransitionLink to={item.to}>{item.label}</TransitionLink>
                 </li>
               )
             )}
