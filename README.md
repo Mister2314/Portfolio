@@ -1,11 +1,17 @@
-# Portfolio
+﻿# Portfolio
 
 "Morfyus" — my first multi-page personal site: five HTML pages (home, work, blog, about, contact) on Bootstrap 5.
 
 **Live demo:** <https://mister2314.github.io/Portfolio/>
 
 <p align="center">
-  <img src="docs/preview.png" alt="Morfyus preview" width="360">
+<div align="center">
+
+| Desktop | Mobile |
+|---|---|
+| <img src="docs/shot-desktop.png" alt="Desktop view" width="700"> | <img src="docs/shot-mobile.png" alt="Mobile view" width="290"> |
+
+</div>
 </p>
 
 ## What it does
