@@ -1,8 +1,8 @@
-﻿# Portfolio
+# Portfolio
 
 "Morfyus" — my first multi-page personal site: five HTML pages (home, work, blog, about, contact) on Bootstrap 5.
 
-**Live demo:** <https://mister2314.github.io/Portfolio/>
+**Live demo:** <https://portfolio-morpheus2314s-projects.vercel.app>
 
 <p align="center">
 <div align="center">
@@ -20,7 +20,7 @@ A 2024 personal site kept public as a baseline: five linked pages sharing one st
 
 ## Tech stack
 
-HTML5 · CSS3 · Bootstrap 5.3 · AOS · Vanilla JS
+React 19 · TypeScript · Vite · Bootstrap 5
 
 ## Features
 

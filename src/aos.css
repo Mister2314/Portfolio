@@ -1,0 +1,36 @@
+/* AOS-equivalent reveal styles, driven by the useAos() IntersectionObserver hook.
+   Mirrors aos@2.3.1 defaults: duration 400ms, easing ease, offset 120px, once: false. */
+
+[data-aos] {
+  transition-property: transform, opacity;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+[data-aos^="fade"][data-aos^="fade"] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+
+[data-aos="fade-up"] {
+  transform: translate3d(0, 100px, 0);
+}
+
+[data-aos^="zoom"][data-aos^="zoom"] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+
+[data-aos="zoom-out"] {
+  transform: scale(1.2);
+}
+
+[data-aos^="fade"][data-aos^="fade"].aos-animate,
+[data-aos^="zoom"][data-aos^="zoom"].aos-animate {
+  opacity: 1;
+  transform: translateZ(0) scale(1);
+}
+
+[data-aos="fade-up"].aos-animate {
+  transform: translate3d(0, 0, 0);
+}
